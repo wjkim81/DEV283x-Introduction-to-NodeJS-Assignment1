@@ -8,15 +8,17 @@ var jsonFilePathOut = process.argv[3]
 
 const csv = require('csvtojson')
 const jsonfile = require('jsonfile')
+const fs = require('fs')
 
 csv()
-.fromFile(csvFilePathIn, (err, result)=>{
+.fromFile(csvFilePathIn, (err, jsonResult)=>{
   if (err) {
     console.log(`Got error in csvtojson ${err}`)
   }
   else {
-    console.log(result) 
-    jsonfile.writeFileSync(jsonFilePathOut, result)
+    console.log(jsonResult) 
+    //jsonfile.writeFileSync(jsonFilePathOut, JSON.stringify(jsonResult, null, 2))
+    fs.writeFileSync(jsonFilePathOut, JSON.stringify(jsonResult, null, 2))
     console.log(`Converted from ${csvFilePathIn} to ${jsonFilePathOut}`) 
   }
 })
