@@ -20,14 +20,9 @@ $ npm init
 
 $ npm install csvtojson
 
-3. Install jsonfile
-
-$ npm i jsonfile
-
-4. Write my code:  csvtojson.js
+3. Write my code:  csvtojson.js
 
 I used csvtojson package to convert csv format to json format
-To writing json object to file, I used jsonfile package.
 
 5. My program usage is as following
 [usage] process.argv[0] process.argv[1] <input: csv file> <output: json file>
