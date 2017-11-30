@@ -9,9 +9,6 @@ var jsonFilePathOut = process.argv[3]
 const csv = require('csvtojson')
 const jsonfile = require('jsonfile')
 
-let buff = ''
-let c = 0
-
 csv()
 .fromFile(csvFilePathIn, (err, result)=>{
   if (err) {
